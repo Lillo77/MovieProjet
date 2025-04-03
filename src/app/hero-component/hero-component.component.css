@@ -1,0 +1,115 @@
+.carousel-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* Effetto armonioso per il testo */
+.carousel-text {
+  flex: 0 0 50%; /* Occupa il 50% dello spazio */
+  align-self: center;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0; /* Testo inizialmente nascosto */
+  transform: translateY(30px); /* Posizionato leggermente più in basso */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Sincronizzazione */
+}
+.carousel-item{
+  text-decoration: none;
+}
+.carousel-item.active .carousel-text {
+  opacity: 1; /* Testo visibile */
+  transform: translateY(0); /* Posizione originale */
+}
+
+/* Effetto dinamico per l'immagine */
+.carousel-image-wrapper {
+  flex: 0 0 50%; /* Occupa il 50% dello spazio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Nasconde le parti fuori dai bordi */
+}
+
+.carousel-image {
+  width: 100%; /* La larghezza dell'immagine */
+  height: 75%;
+  object-fit: contain; /* Adatta senza deformarsi */
+  transform: scale(1); /* Dimensione iniziale */
+  opacity: 0; /* Immagine inizialmente nascosta */
+  transition: transform 1s ease-in-out, opacity 0.8s ease-in-out; /* Armonia e fluidità */
+}
+
+.carousel-item.active .carousel-image {
+  transform: scale(1.1); /* Effetto zoom sull'immagine attiva */
+  opacity: 1; /* Immagine visibile */
+}
+
+
+
+/* Controlli manuali ai bordi */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%; /* Centrato verticalmente */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: none; /* Nasconde le frecce di default */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transizione fluida */
+  z-index: 10; /* Posiziona sopra il contenuto */
+}
+
+/* Posizionamento della freccia sinistra */
+.carousel-control-prev {
+  left: 10px; /* Posiziona a sinistra */
+}
+
+/* Posizionamento della freccia destra */
+.carousel-control-next {
+  right: 10px; /* Posiziona a destra */
+}
+
+/* Mostra la freccia sinistra solo al passaggio sulla zona sinistra */
+#heroCarousel:hover .carousel-control-prev {
+  display: flex;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1); /* Leggero ingrandimento */
+}
+
+/* Mostra la freccia destra solo al passaggio sulla zona destra */
+#heroCarousel:hover .carousel-control-next {
+  display: flex;
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1); /* Leggero ingrandimento */
+}
+
+
+/* Indicatori cliccabili */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent; /* Cerchio vuoto */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer; /* Indica che l'indicatore è cliccabile */
+}
+
+.indicator.active {
+  background-color: white; /* Cerchio riempito per la slide attiva */
+  transform: scale(1.2); /* Ingrandimento leggero per evidenziarlo */
+}

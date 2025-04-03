@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import {RouterLink} from '@angular/router';
-import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
-  selector: 'app-navbar-component',
+  selector: 'app-navbar',
   imports: [
-    RouterLink
+    RouterLink,
+
   ],
   templateUrl: './navbar-component.component.html',
   styleUrl: './navbar-component.component.css'

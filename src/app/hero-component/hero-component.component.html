@@ -1,1 +1,43 @@
-<p>hero-component works!</p>
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+  <!-- Contenitore delle slide -->
+  <div class="carousel-inner">
+    @for ( movie of heroMovies$ | async; track movie.id; let index = $index) {
+      <a class="carousel-item" [class.active]="index === 0" [routerLink]="['/details', movie.id]">
+        <div class="carousel-content">
+          <div class="carousel-text">
+            <h1 class="carousel-title">{{ movie.title }}</h1>
+            <p class="carousel-description">{{ movie.overview }}</p>
+          </div>
+          <div class="carousel-image-wrapper">
+            <img [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path"
+                 alt="{{ movie.title }}" class="carousel-image">
+          </div>
+        </div>
+      </a>
+    } @empty {
+      <p class="carousel-empty">Non ci sono film disponibili al momento.</p>
+    }
+  </div>
+
+  <!-- Indicatori -->
+  <div class="carousel-indicators">
+    @for ( movie of heroMovies$ | async; track movie.id; let index = $index) {
+      <button type="button"
+              [class.active]="index === 0"
+              data-bs-target="#heroCarousel"
+              [attr.data-bs-slide-to]="index"
+              class="indicator"></button>
+    }
+  </div>
+
+  <!-- Controlli manuali -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Precedente</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Successivo</span>
+  </button>
+</div>
+

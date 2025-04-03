@@ -1,0 +1,51 @@
+.navbar{
+  height: 70px;
+  display: flex;
+  align-items: start;
+}
+
+.navbar-dark-bg .nav-link {
+  color: #fff; /* Scritte bianche */
+}
+
+.navbar-dark-bg .nav-link.active {
+  font-weight: bold; /* Evidenziamo il link attivo */
+}
+
+.navbar-dark-bg .nav-link:hover {
+  color: #ccc; /* Colore più chiaro al passaggio del mouse */
+}
+
+.navbar-dark-bg .dropdown-menu {
+  background-color: #000; /* Sfondo nero per il menu a tendina */
+  color: #fff; /* Testo bianco */
+}
+
+.navbar-dark-bg .dropdown-item {
+  color: #fff; /* Testo bianco */
+}
+
+.navbar-dark-bg .dropdown-item:hover {
+  background-color: #333; /* Sfondo più chiaro al passaggio del mouse */
+  color: #fff; /* Testo bianco */
+}
+
+.navbar-dark-bg .form-control {
+  background-color: #333; /* Campo di input scuro */
+  color: #fff; /* Testo bianco */
+  border: 1px solid black;
+}
+
+.navbar-dark-bg .form-control::placeholder {
+  color: #ccc; /* Colore del placeholder */
+}
+
+.navbar-dark-bg .btn-outline-light {
+  color: black;
+  border-color: black;
+}
+
+.navbar-dark-bg .btn-outline-light:hover {
+  background-color: #fff; /* Sfondo bianco al passaggio del mouse */
+  color: #000; /* Testo nero */
+}

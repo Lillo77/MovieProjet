@@ -1,0 +1,7 @@
+.back{
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9), /* Nero opaco a sinistra */
+    rgba(0, 0, 0, 0.1)  /* Trasparente verso l'immagine */
+  );
+}
