@@ -18,4 +18,15 @@ export class MovieService {
       `${this.API_URL}/movie/${category}?api_key=${this.API_KEY}&page=${page}`
     );
   }
+  // Metodo per ottenere i dettagli di un film
+  getMovieDetails(id: number): Observable<any> {
+    return this.http.get(`${this.API_URL}/movie/${id}?api_key=${this.API_KEY}`);
+  }
+
+  // Metodo per cercare un film
+  searchMovies(query: string): Observable<any> {
+    return this.http.get(
+      `${this.API_URL}/search/movie?api_key=${this.API_KEY}&query=${query}`
+    );
+  }
 }
