@@ -29,23 +29,7 @@ export class MovieService {
     );
   }
 
-  // // Metodo per ottenere una lista generica di film (es. trending, discover, ecc.)
-  // getMovieList(): Observable<any> {
-  //   return this.http.get(
-  //     `${this.API_URL}/discover/movie?api_key=${this.API_KEY}`
-  //   );
-  // }
-  // Metodo per ottenere gli ultimi film usciti ordinati per data di uscita (dal più recente)
-  // getLatestMovies(): Observable<any> {
-  //   const today = new Date().toISOString().split('T')[0]; // Ottieni la data di oggi in formato 'YYYY-MM-DD'
-  //   return this.http.get(`${this.API_URL}/discover/movie`, {
-  //     params: {
-  //       api_key: this.API_KEY,
-  //       sort_by: 'release_date.desc',
-  //       'primary_release_date.lte': today,
-  //     },
-  //   });
-  // }
+ 
 
   getRandomMovies(): Observable<any> {
     const today = new Date().toISOString().split('T')[0];

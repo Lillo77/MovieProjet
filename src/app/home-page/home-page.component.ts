@@ -5,6 +5,8 @@ import { MovieService } from '../services/movie.service';
 
 @Component({
   selector: 'app-home-page',
+  standalone: true, // Componente stand-alone
+
   imports: [HeroComponentComponent, CardComponentComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
