@@ -1,1 +1,17 @@
-<p>details-page works!</p>
+<!-- Bottone per tornare indietro -->
+
+<button class="btn btn-secondary m-4" (click)="goBack()">Torna Indietro</button>
+
+<div *ngIf="movie" class="d-flex p-3">
+    <div *ngIf="movie.poster_path" class="m-3">
+        <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="{{ movie.title }}" />
+    </div>
+    <div class="m-3">
+        <h1>{{ movie.title }}</h1>
+        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Overview:</strong> {{ movie.overview }}</p>
+        <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+    </div>
+    
+    
+</div>
