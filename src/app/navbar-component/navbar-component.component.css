@@ -2,6 +2,20 @@
   height: 70px;
   display: flex;
   align-items: start;
+  position: fixed;
+  top: 0; /* Fissa la navbar all'inizio */
+  width: 100%; /* Occupa tutta la larghezza della pagina */
+  z-index: 1000; /* Stai sopra gli altri elementi */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9), /* Nero opaco a sinistra */
+    rgba(0, 0, 0, 0.1)  /* Trasparente verso l'immagine */
+  );
+  transition: background-color 0.3s ease-in-out; /* Animazione per il cambio di colore */
+
+}
+.navbar.scrolled {
+  background-color: #000; /* Colore nero quando si scorre */
 }
 
 .navbar-dark-bg .nav-link {

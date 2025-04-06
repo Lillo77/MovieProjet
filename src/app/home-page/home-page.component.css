@@ -1,0 +1,18 @@
+.categories {
+  margin: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cards app-card {
+  flex: 1 1 calc(20% - 15px);
+}

@@ -1,5 +1,47 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuisce uniformemente le card */
+}
 
- .card:hover {
-     transform: scale(1.02);
-     transition: transform 0.2s ease-in-out;
- }
+.card {
+  background: #222;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+
+}
+
+.card img {
+  width: 100%; /* L'immagine occupa tutta la larghezza */
+  height: 75%; /* L'immagine occupa il 75% dell'altezza della card */
+  object-fit: cover; /* Assicura che l'immagine sia ben adattata senza deformazioni */
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0 0.5rem;
+  text-align: center;
+  height: 25%; /* Occupa il restante spazio della card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Evita trabocchi di testo */
+}
+
+
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-container {
+  flex: 0 1 calc(20% - 1rem); /* Card con larghezza dinamica (5 per riga) */
+  margin-bottom: 2rem; /* Spazio tra le righe */
+}

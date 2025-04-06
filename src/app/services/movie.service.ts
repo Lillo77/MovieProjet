@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable,map } from 'rxjs';
@@ -17,9 +18,15 @@ export class MovieService {
       `${this.API_URL}/movie/${category}?api_key=${this.API_KEY}&page=${page}`
     );
   }
-  // Metodo per ottenere i dettagli di un film
   getMovieDetails(id: number): Observable<any> {
-    return this.http.get(`${this.API_URL}/movie/${id}?api_key=${this.API_KEY}`);
+    return this.http.get(
+      `${this.API_URL}/movie/${id}?api_key=${this.API_KEY}&append_to_response=credits,recommendations,videos,episodes`
+    );
+  }
+  getRelatedMovies(movieId: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.API_URL}/movie/${movieId}/recommendations?api_key=${this.API_KEY}`
+    );
   }
 
   // Metodo per cercare un film
@@ -29,7 +36,7 @@ export class MovieService {
     );
   }
 
- 
+
 
   getRandomMovies(): Observable<any> {
     const today = new Date().toISOString().split('T')[0];
@@ -64,3 +71,4 @@ export class MovieService {
     return array.sort(() => Math.random() - 0.5);
   }
 }
+

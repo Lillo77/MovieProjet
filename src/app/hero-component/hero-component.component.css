@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-
 }
 
 /* Effetto armonioso per il testo */
@@ -16,9 +15,11 @@
   transform: translateY(30px); /* Posizionato leggermente più in basso */
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; /* Sincronizzazione */
 }
+
 .carousel-item{
   text-decoration: none;
 }
+
 .carousel-item.active .carousel-text {
   opacity: 1; /* Testo visibile */
   transform: translateY(0); /* Posizione originale */
@@ -46,8 +47,6 @@
   transform: scale(1.1); /* Effetto zoom sull'immagine attiva */
   opacity: 1; /* Immagine visibile */
 }
-
-
 
 /* Controlli manuali ai bordi */
 .carousel-control-prev,
@@ -88,7 +87,6 @@
   opacity: 1;
   transform: translateY(-50%) scale(1.1); /* Leggero ingrandimento */
 }
-
 
 /* Indicatori cliccabili */
 .carousel-indicators {

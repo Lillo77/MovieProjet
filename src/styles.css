@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+  padding-top: 70px; /* Spazio sufficiente per non coprire il contenuto */
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9), /* Nero opaco a sinistra */
+    rgba(0, 0, 0, 0.1)  /* Trasparente verso l'immagine */
+  );
+}

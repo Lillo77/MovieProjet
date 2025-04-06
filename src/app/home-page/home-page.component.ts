@@ -16,17 +16,6 @@ export class HomePageComponent implements OnInit {
 
   constructor(private movieService: MovieService) {}
 
-  // ngOnInit(): void {
-  //   this.movieService.getLatestMovies().subscribe({
-  //     next: (res) => {
-  //       this.movies = res.results;
-  //     },
-  //     error: (err) => {
-  //       console.error('Errore nel recuperare i film più recenti:', err);
-  //     },
-  //   });
-  // }
-
   ngOnInit(): void {
     this.movieService.getRandomMovies().subscribe({
       next: (res) => {

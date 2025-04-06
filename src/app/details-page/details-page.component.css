@@ -1,0 +1,143 @@
+.details-top {
+  position: relative;
+  height: 80vh; /* L'immagine occupa tutta l'altezza dello schermo */
+  background-size: cover; /* Mostra tutta l'immagine senza tagliarla */
+  background-position: top center; /* Ancora l'immagine nella parte superiore e la centra orizzontalmente */
+  background-attachment: fixed; /* Effetto parallax */
+  z-index: 1;
+  transition: filter 0.3s ease, opacity 0.3s ease; /* Transizione fluida */
+  filter: brightness(1);
+}
+
+
+.details-top-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Adatta l'immagine alla larghezza del contenitore */
+  height: 100%; /* Copre l'intero contenitore */
+  z-index: -1; /* Manda l'immagine sotto il contenuto */
+}
+
+.details-overlay {
+  position: absolute;
+  left: 1%;
+  bottom: 20%;
+  background: rgba(0, 0, 0, 0.6); /* Sfondo semi-trasparente per il testo */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 40%;
+  color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transizione fluida */
+}
+
+
+.details-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.details-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-buttons {
+  display: flex;
+  justify-content: center; /* Centra i pulsanti */
+  gap: 1rem; /* Spaziatura tra i pulsanti */
+  margin-top: 1.5rem; /* Distanza dalla descrizione */
+}
+
+.details-buttons button {
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.details-buttons button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.watched-badge-container {
+  margin-top: 1rem; /* Spazio tra i pulsanti e il badge */
+  text-align: left; /* Allineamento coerente con la descrizione */
+}
+
+.watched-badge {
+  font-size: 1.2rem;
+  color: #0f0; /* Colore verde per evidenziare lo stato visto */
+}
+
+
+.details-extra {
+  margin-top: 3rem; /* Distanza dalla sezione precedente */
+  padding: 0 1rem; /* Spaziatura laterale */
+}
+
+.details-extra-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: left; /* Allinea il titolo a sinistra */
+  margin-left: 1rem; /* Spazio dal bordo sinistro */
+  margin-bottom: 10rem; /* Spazio sotto il titolo */
+  margin-top: 10rem;
+  color: #fff;
+}
+
+.episode,
+.sequel,
+.recommendation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.episode img,
+.sequel img,
+.recommendation img {
+  width: 150px;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+
+.recommendation img {
+  width: 150px;
+  margin-right: 1rem;
+
+}
+
+.trailer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.trailer-modal iframe {
+  border-radius: 10px;
+}
+
+.close-trailer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
