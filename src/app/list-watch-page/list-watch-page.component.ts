@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {StoreService} from '../services/store.service';
+import { CardComponentComponent } from "../card-component/card-component.component";
 
 
 @Component({
   selector: 'app-list-watch-page',
-  imports: [],
+  imports: [CardComponentComponent],
   templateUrl: './list-watch-page.component.html',
   styleUrl: './list-watch-page.component.css'
 })

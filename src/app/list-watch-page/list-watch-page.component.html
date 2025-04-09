@@ -1,6 +1,6 @@
 <p>list-watch-page works!</p>
-@for(movie of listWhatch; track listWhatch){
+
 <div  class="movie-item">
-  <h3>{{ movie.title }}</h3>
-</div>}
+  <app-card-component [movies]="this.favorities"></app-card-component>
+</div>
 
