@@ -1,5 +1,5 @@
 <h1>Preferiti</h1>
-@for(movie of favorites; track favorites){
-  <div class="movie-item">
-  <h3>{{ movie.title }}</h3>
-</div>}
+
+<div class="movie-item">
+    <app-card-component [movies]="this.favorites"></app-card-component>
+</div>
