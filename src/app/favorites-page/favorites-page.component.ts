@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import { StoreService } from '../services/store.service';
+import { CardComponentComponent } from "../card-component/card-component.component";
 
 
 @Component({
   selector: 'app-favorites-page',
   imports: [
-  ],
+    CardComponentComponent
+],
   templateUrl: './favorites-page.component.html',
   styleUrl: './favorites-page.component.css'
 })
