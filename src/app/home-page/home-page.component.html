@@ -9,8 +9,9 @@
       <!-- Contenitore delle card -->
       <div class="movie-list" id="{{ category.name }}">
         <!-- Usa direttamente le card generate da app-card-component -->
-
-        <app-card-component [movies]="category.movies" layout="horizontal"></app-card-component>
+         @for(movie of category.movies;track $index){
+          <app-card-component [movie]="movie" layout="horizontal"></app-card-component>
+         }
       </div>
 
 

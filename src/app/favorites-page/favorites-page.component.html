@@ -1,4 +1,10 @@
 <h2 class="pref">Preferiti</h2>
 <div class="movie-item">
-    <app-card-component [movies]="this.favorites"></app-card-component>
+    <div class="pure-g">
+        @for(movie of this.favorites;track $index){
+            <div class="pure-u-1-3">
+                <app-card-component [movie]="movie"></app-card-component>
+            </div>
+        }
+    </div>
 </div>

@@ -1,14 +1,13 @@
-/* Layout orizzontale */
+/* Horizontal Layout */
 .horizontal-layout {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow-x: scroll; /* Scroll orizzontale */
+  overflow-x: scroll; /* Enables horizontal scrolling */
   white-space: nowrap;
-
 }
 
-/* Layout verticale */
+/* Vertical Layout */
 .vertical-layout {
   display: flex;
   flex-direction: row;
@@ -16,7 +15,11 @@
   justify-content: space-evenly;
 }
 
-
+/* Card Styles */
+.card-container {
+  width: 200px;
+  margin-bottom: 2rem;
+}
 
 .card {
   background: #222;
@@ -27,35 +30,26 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 90%;
-
 }
 
 .card img {
-  width: 100%; /* L'immagine occupa tutta la larghezza */
-  height: 75%; /* L'immagine occupa il 75% dell'altezza della card */
-  object-fit: cover; /* Assicura che l'immagine sia ben adattata senza deformazioni */
+  width: 100%;
+  height: 70%; /* Adjust image height */
+  object-fit: cover; /* Prevent image distortion */
 }
 
 .card h3 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 0.5rem 0;
   padding: 0 0.5rem;
-  text-align: center;
-  height: 25%; /* Occupa il restante spazio della card */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Evita trabocchi di testo */
+  overflow: hidden; /* Avoid text overflow */
 }
 
-
+/* Card Hover Effect */
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.02); /* Slight zoom effect */
   transition: transform 0.2s ease-in-out;
-}
-
-.card-container {
-  margin-bottom: 2rem; /* Spazio tra le righe */
-  width: 20%;
 }

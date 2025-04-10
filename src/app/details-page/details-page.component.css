@@ -77,6 +77,8 @@
 
 
 .details-extra {
+  position: absolute;
+  left: 150px;
   margin-top: 3rem; /* Distanza dalla sezione precedente */
 }
 
@@ -84,7 +86,7 @@
   font-size: 1.8rem;
   font-weight: bold;
   text-align: left; /* Allinea il titolo a sinistra */
-  margin-left: 1rem; /* Spazio dal bordo sinistro */
+  margin-left: -10px; /* Spazio dal bordo sinistro */
   margin-bottom: 5rem; /* Spazio sotto il titolo */
   margin-top: 3rem;
   color: #fff;
