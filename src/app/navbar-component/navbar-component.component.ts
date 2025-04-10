@@ -15,12 +15,15 @@ import {MovieService} from '../services/movie.service';
 })
 export class NavbarComponent implements OnInit {
 
-  genres: any[] = []; // Array per i generi
+  genres: any[] = [];
+  filteredFilms: any[] = [];
+  films: any[] = [];// Array per i generi
 
   constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadGenres();
+  
   }
 
   loadGenres(): void {
@@ -28,6 +31,20 @@ export class NavbarComponent implements OnInit {
       this.genres = data.genres; // Carica i generi dal servizio
     });
   }
+
+
+ 
+  onSearch(query: string): void {
+    if (!query) {
+      this.filteredFilms = []; // Se la query è vuota, non mostrare nulla
+      return;
+    }
+
+    this.filteredFilms = this.films.filter(film =>
+      film.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
 
   onSearchSubmit(event: Event): void {
     event.preventDefault(); // Evita il refresh della pagina

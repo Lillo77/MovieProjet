@@ -15,7 +15,7 @@
           <a
             class="nav-link dropdown-toggle"
             href="#"
-            role="button"
+            role="button" 
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
@@ -30,9 +30,21 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" (submit)="onSearchSubmit($event)">
-        <input #searchInput class="form-control me-2" type="search" placeholder="Cerca..." aria-label="Search">
+      <form class="d-flex position-relative" (submit)="onSearchSubmit($event)">
+        <input
+         #searchInput class="form-control me-2"
+         type="search"
+         placeholder="Cerca..."
+         aria-label="Search"
+         name="search"
+         autocomplete="off"
+         (input)="onSearch(searchInput.value)" />
         <button class="btn btn-outline-light" type="submit">Search</button>
+
+        <ul *ngIf="filteredFilms.length > 0">
+          <li *ngFor="let film of filteredFilms">{{ film.title }}</li>
+        </ul>
+       
       </form>
     </div>
   </div>
