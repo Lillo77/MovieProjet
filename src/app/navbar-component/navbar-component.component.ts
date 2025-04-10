@@ -1,13 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
-import {SearchbarComponentComponent} from '../searchbar-component/searchbar-component.component';
 import {Router, RouterLink} from '@angular/router';
 import {MovieService} from '../services/movie.service';
 
 @Component({
   selector: 'app-navbar',
   imports: [
-    SearchbarComponentComponent,
     NgbNavModule, NgbDropdownModule, RouterLink
   ],
   templateUrl: './navbar-component.component.html',
@@ -32,10 +30,14 @@ export class NavbarComponent implements OnInit {
   onSearchSubmit(event: Event): void {
     event.preventDefault(); // Evita il refresh della pagina
     const inputElement = (event.target as HTMLFormElement).querySelector('input');
-    const searchTerm = inputElement?.value.trim();
+    if(inputElement){
+      const searchTerm = inputElement?.value.trim();
 
-    if (searchTerm) {
-      this.router.navigate(['/search'], { queryParams: { query: searchTerm } });
+      if (searchTerm) {
+        this.router.navigate(['/search'], { queryParams: { search: searchTerm } });
+      }
+
+      inputElement.value = ''
     }
   }
 
@@ -43,4 +45,3 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/search'], { queryParams: { genre: genreId, genreName } });
   }
 }
-

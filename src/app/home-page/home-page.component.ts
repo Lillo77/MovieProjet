@@ -11,7 +11,7 @@ import {CardComponentComponent} from '../card-component/card-component.component
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit, AfterViewInit {
+export class HomePageComponent {
   categories: { name: string; movies: any[] }[] = []; // Array di categorie con i relativi film
 
   constructor(private movieService: MovieService) {
@@ -19,20 +19,6 @@ export class HomePageComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loadCategories();
-  }
-
-  ngAfterViewInit(): void {
-    const container = document.getElementById('Action'); // Esempio con una categoria
-    if (container) {
-      console.log('Larghezza visibile (offsetWidth):', container.offsetWidth);
-      console.log('Larghezza totale (scrollWidth):', container.scrollWidth);
-      console.log('Numero di figli:', container.children.length);
-
-      const children = container.children;
-      for (let i = 0; i < children.length; i++) {
-        console.log(`Figlio ${i} larghezza:`, (children[i] as HTMLElement).offsetWidth);
-      }
-    }
   }
 
   loadCategories(): void {
@@ -67,12 +53,8 @@ export class HomePageComponent implements OnInit, AfterViewInit {
       const scrollAmount = container.offsetWidth;
       const maxScroll = container.scrollWidth - container.offsetWidth;
 
-      console.log('Prima dello scroll destra:', container.scrollLeft);
       if (container.scrollLeft < maxScroll) {
         container.scrollLeft += scrollAmount;
-        console.log('Dopo lo scroll destra:', container.scrollLeft);
-      } else {
-        console.warn('Limite massimo raggiunto. Non è possibile scrollare oltre.');
       }
     }
   }
@@ -85,22 +67,9 @@ export class HomePageComponent implements OnInit, AfterViewInit {
   scrollLeft(categoryId: string): void {
     const container = document.getElementById(categoryId);
     if (container) {
-      // Aggiunge il listener per monitorare l'evento di scroll
-      container.addEventListener('scroll', () => {
-        console.log('Evento di scroll attivato:', container.scrollLeft);
-      });
-
       const scrollAmount = container.offsetWidth; // Calcola la larghezza visibile
       container.scrollLeft -= scrollAmount; // Scroll manuale
-      console.log('Dopo lo scroll sinistra:', {
-        scrollLeft: container.scrollLeft,
-        scrollWidth: container.scrollWidth,
-        offsetWidth: container.offsetWidth
-      });
     }
-  }
-
 }
-
-
+}
 

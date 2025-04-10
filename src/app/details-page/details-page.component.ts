@@ -90,11 +90,8 @@ export class DetailsPageComponent implements OnInit {
 
       // Ottieni i film correlati
       this.movieService.getRelatedMovies(id).subscribe((relatedData) => {
-        console.log('Dati correlati:', relatedData); // Debug
         this.movies = Array.isArray(relatedData.results) ? relatedData.results : [];
-        console.log('Film correlati:', this.movies); // Debug
         this.limitedMovies = this.movies.slice(0, 10);
-        console.log('Film limitati:', this.limitedMovies); // Debug
       });
     });
   }
