@@ -73,7 +73,6 @@ export class StoreService {
     if (!this.watchedList.includes(movieId)) {
       this.watchedList.push(movieId);
       this.saveWatchedList();
-      console.log('Film aggiunto come già visto:', movieId);
     }
   }
 

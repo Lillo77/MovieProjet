@@ -12,10 +12,6 @@ import { RouterLink } from '@angular/router';
 export class CardComponentComponent {
   @Input() movie: any = null; // Lista generica di film
   @Input() layout: 'horizontal' | 'vertical' = 'vertical'; // Layout: orizzontale o verticale
-
-  ngOnInit(){
-    console.log(this.movie);
-  }
 }
 
 

@@ -1,13 +1,13 @@
-  <div class="card-container">
-    <div class="card">
-      <a [routerLink]="['/details', movie.id]">
-        <img
-          *ngIf="movie.poster_path"
-          class="card-img-top"
-          loading="lazy"
-          [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
-          [alt]="movie.title"
-        />
-      </a>
-    </div>
+<div class="card-container">
+  <div class="card">
+    <a [routerLink]="['/details', movie.id]">
+      <img
+
+        class="card-img-top"
+        loading="lazy"
+        [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/w200/' + movie.poster_path : 'assets/placeholder_poster_movie.png'"
+        [alt]="movie.title"
+      />
+    </a>
   </div>
+</div>
