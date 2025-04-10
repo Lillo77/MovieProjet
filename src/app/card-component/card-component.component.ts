@@ -10,14 +10,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './card-component.component.css',
 })
 export class CardComponentComponent {
-  @Input() movies: any[] = []; // Lista generica di film
+  @Input() movie: any = null; // Lista generica di film
   @Input() layout: 'horizontal' | 'vertical' = 'vertical'; // Layout: orizzontale o verticale
 
-  trackById(index: number, movie: any): number {
-    return movie.id; // Usa l'ID univoco del film per ottimizzare il rendering
+  ngOnInit(){
+    console.log(this.movie);
   }
-
-
 }
 
 
