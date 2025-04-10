@@ -1,3 +1,20 @@
 <app-hero></app-hero>
-<app-card-component [movies]="movies"></app-card-component>
+@for( category of categories; track category){
+  <section class="category-section">
+    <h2 class="category-title">{{ category.name | titlecase }}</h2>
+    <div class="category-carousel">
+      <!-- Freccia per scorrere a sinistra -->
+      <button class="arrow left" (click)="scrollLeft(category.name)">❮</button>
 
+      <!-- Contenitore delle card -->
+      <div class="movie-list" id="{{ category.name }}">
+        <!-- Usa direttamente le card generate da app-card-component -->
+
+        <app-card-component [movies]="category.movies" layout="horizontal"></app-card-component>
+      </div>
+
+
+      <!-- Freccia per scorrere a destra -->
+      <button class="arrow right" (click)="scrollRight(category.name)">❯</button>
+    </div>
+  </section>}

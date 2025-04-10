@@ -22,15 +22,16 @@
             Generi
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <!-- Generi dinamici -->
+            @for( genre of genres; track genre){
+            <li>
+              <a class="dropdown-item" (click)="navigateToGenre(genre.id, genre.name)">{{ genre.name }}</a>
+            </li>}
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" (submit)="onSearchSubmit($event)">
+        <input #searchInput class="form-control me-2" type="search" placeholder="Cerca..." aria-label="Search">
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
     </div>

@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import { NgbDropdownModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import {SearchbarComponentComponent} from '../searchbar-component/searchbar-component.component';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
+import {MovieService} from '../services/movie.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,15 +14,33 @@ import {RouterLink} from '@angular/router';
   styleUrl: './navbar-component.component.css'
 })
 export class NavbarComponent implements OnInit {
-  ngOnInit(): void {
-    const navbar = document.querySelector('.navbar') as HTMLElement;
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 0) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+  genres: any[] = []; // Array per i generi
+
+  constructor(private movieService: MovieService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.loadGenres();
+  }
+
+  loadGenres(): void {
+    this.movieService.getGenres().subscribe((data) => {
+      this.genres = data.genres; // Carica i generi dal servizio
     });
   }
+
+  onSearchSubmit(event: Event): void {
+    event.preventDefault(); // Evita il refresh della pagina
+    const inputElement = (event.target as HTMLFormElement).querySelector('input');
+    const searchTerm = inputElement?.value.trim();
+
+    if (searchTerm) {
+      this.router.navigate(['/search'], { queryParams: { query: searchTerm } });
+    }
+  }
+
+  navigateToGenre(genreId: number, genreName: string): void {
+    this.router.navigate(['/search'], { queryParams: { genre: genreId, genreName } });
+  }
 }
+

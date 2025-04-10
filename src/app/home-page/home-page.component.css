@@ -1,18 +1,49 @@
-.categories {
-  margin: 20px;
+.category-section {
+  margin: 2rem 0;
+  padding: 1rem;
 }
 
-.cards {
+.category-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.category-carousel {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  align-items: center;
 }
 
-h2 {
-  color: #333;
-  margin-bottom: 10px;
+.arrow {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.cards app-card {
-  flex: 1 1 calc(20% - 15px);
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+.movie-list {
+  display: flex;
+  gap: 1rem; /* Spaziatura tra le card */
+  overflow-x: auto; /* Abilita lo scroll orizzontale */
+  scroll-behavior: smooth; /* Scroll fluido */
+  white-space: nowrap; /* Forza una sola riga */
+}
+
+
+.movie-list::-webkit-scrollbar {
+  display: none; /* Nasconde la scrollbar */
 }

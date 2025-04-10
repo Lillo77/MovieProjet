@@ -1,8 +1,22 @@
-.row {
+/* Layout orizzontale */
+.horizontal-layout {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Distribuisce uniformemente le card */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll; /* Scroll orizzontale */
+  white-space: nowrap;
+
 }
+
+/* Layout verticale */
+.vertical-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
 
 .card {
   background: #222;
@@ -13,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100%;
+  width: 90%;
 
 }
 
@@ -42,6 +56,6 @@
 }
 
 .card-container {
-  flex: 0 1 calc(20% - 1rem); /* Card con larghezza dinamica (5 per riga) */
   margin-bottom: 2rem; /* Spazio tra le righe */
+  width: 20%;
 }

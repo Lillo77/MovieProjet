@@ -1,15 +1,15 @@
-<div class="row">
-  @for (movie of movies; track movies){
-    <div class="card-container" >
-      <div class="card">
-        <a [routerLink]="['/details', movie.id]">
-          @if(movie.poster_path){
-            <img
-              class="card-img-top"
-              [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
-              [alt]="movie.title"
-            />}
-        </a>
-      </div>
-    </div>}
+<div class="row" [ngClass]="{'horizontal-layout': layout === 'horizontal', 'vertical-layout': layout === 'vertical'}">
+  <div *ngFor="let movie of movies; trackBy: trackById" class="card-container">
+    <div class="card">
+      <a [routerLink]="['/details', movie.id]">
+        <img
+          *ngIf="movie.poster_path"
+          class="card-img-top"
+          loading="lazy"
+          [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
+          [alt]="movie.title"
+        />
+      </a>
+    </div>
+  </div>
 </div>

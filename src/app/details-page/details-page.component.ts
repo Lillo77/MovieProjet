@@ -5,6 +5,7 @@ import { StoreService } from '../services/store.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {CardComponentComponent} from '../card-component/card-component.component';
 
+
 @Component({
   selector: 'app-details-page',
   standalone: true,
@@ -58,7 +59,6 @@ export class DetailsPageComponent implements OnInit {
         relatedTitle.style.opacity = '1';
       }
     });
-
     // Usa paramMap per rilevare cambiamenti nell'ID della rotta
     this.route.paramMap.subscribe((params) => {
       const movieId = params.get('id');

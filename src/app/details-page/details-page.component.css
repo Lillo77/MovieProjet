@@ -78,7 +78,6 @@
 
 .details-extra {
   margin-top: 3rem; /* Distanza dalla sezione precedente */
-  padding: 0 1rem; /* Spaziatura laterale */
 }
 
 .details-extra-title {
@@ -86,8 +85,8 @@
   font-weight: bold;
   text-align: left; /* Allinea il titolo a sinistra */
   margin-left: 1rem; /* Spazio dal bordo sinistro */
-  margin-bottom: 10rem; /* Spazio sotto il titolo */
-  margin-top: 10rem;
+  margin-bottom: 5rem; /* Spazio sotto il titolo */
+  margin-top: 3rem;
   color: #fff;
 }
 

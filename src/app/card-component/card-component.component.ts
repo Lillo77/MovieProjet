@@ -1,13 +1,23 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ✅ Importa questo!
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-card-component',
-  imports: [CommonModule, RouterLink], // ✅ Aggiungi qui
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './card-component.component.html',
   styleUrl: './card-component.component.css',
 })
 export class CardComponentComponent {
-  @Input() movies: any[] = []; // riceve la lista di film dal componente genitore
+  @Input() movies: any[] = []; // Lista generica di film
+  @Input() layout: 'horizontal' | 'vertical' = 'vertical'; // Layout: orizzontale o verticale
+
+  trackById(index: number, movie: any): number {
+    return movie.id; // Usa l'ID univoco del film per ottimizzare il rendering
+  }
+
+
 }
+
+
