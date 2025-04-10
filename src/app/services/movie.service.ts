@@ -48,6 +48,11 @@ export class MovieService {
       `https://api.themoviedb.org/3/discover/movie?api_key=${this.API_KEY}&with_genres=${genreId}`
     );
   }
+
+  getMoviesByCategorySearch(genreId: number | null, page: number): Observable<any> {
+    return this.http.get<any>(`https://api.themoviedb.org/3/discover/movie?api_key=${this.API_KEY}&with_genres=${genreId}&page=${page}`);
+  }
+
 }
 
 

@@ -11,7 +11,7 @@ import {CardComponentComponent} from '../card-component/card-component.component
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
   categories: { name: string; movies: any[] }[] = []; // Array di categorie con i relativi film
 
   constructor(private movieService: MovieService) {
@@ -33,7 +33,7 @@ export class HomePageComponent {
             .sort((a: { release_date: string | number | Date; }, b: {
               release_date: string | number | Date;
             }) => new Date(b.release_date).getTime() - new Date(a.release_date).getTime()) // Ordina per data
-            .slice(0, 20); // Limita a 10 film
+            .slice(0, 20); // Limita a 20 film
           if (sortedMovies.length > 0) {
             this.categories.push({
               name: genre.name,
@@ -59,17 +59,12 @@ export class HomePageComponent {
     }
   }
 
-
-
-
-
-
   scrollLeft(categoryId: string): void {
     const container = document.getElementById(categoryId);
     if (container) {
       const scrollAmount = container.offsetWidth; // Calcola la larghezza visibile
       container.scrollLeft -= scrollAmount; // Scroll manuale
     }
-}
+  }
 }
 

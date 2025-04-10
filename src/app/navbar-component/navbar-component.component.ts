@@ -44,4 +44,5 @@ export class NavbarComponent implements OnInit {
   navigateToGenre(genreId: number, genreName: string): void {
     this.router.navigate(['/search'], { queryParams: { genre: genreId, genreName } });
   }
+
 }

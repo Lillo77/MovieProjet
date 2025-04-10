@@ -33,15 +33,19 @@
 .navbar-dark-bg .dropdown-menu {
   background-color: #000; /* Sfondo nero per il menu a tendina */
   color: #fff; /* Testo bianco */
+
 }
 
 .navbar-dark-bg .dropdown-item {
   color: #fff; /* Testo bianco */
+
+
 }
 
 .navbar-dark-bg .dropdown-item:hover {
   background-color: #333; /* Sfondo più chiaro al passaggio del mouse */
   color: #fff; /* Testo bianco */
+
 }
 
 .navbar-dark-bg .form-control {

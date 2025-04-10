@@ -1,10 +1,20 @@
-<h2 class="pref">Ricerca Film</h2>
+<h2 class="pref">{{ genreName}}</h2>
 <div class="movie-item">
-    <div class="pure-g">
-        @for(movie of this.searchedMovies;track $index){
-            <div class="pure-u-1-5">
-                <app-card-component [movie]="movie"></app-card-component>
-            </div>
-        }
+  <div class="pure-g">
+    @for(movie of this.searchedMovies;track $index){
+      <div class="pure-u-1-5">
+        <app-card-component [movie]="movie"></app-card-component>
+      </div>
+    }
+  </div>
+</div>
+
+
+
+<div class="movie-item">
+  <div class="pure-g">
+    <div *ngFor="let movie of searchedMovies; trackBy: trackById" class="pure-u-1-5">
+      <app-card-component [movie]="movie"></app-card-component>
     </div>
+  </div>
 </div>

@@ -24,9 +24,9 @@
           <ul class="dropdown-menu">
             <!-- Generi dinamici -->
             @for( genre of genres; track genre){
-            <li>
-              <a class="dropdown-item" (click)="navigateToGenre(genre.id, genre.name)">{{ genre.name }}</a>
-            </li>}
+              <li>
+                <a class="dropdown-item" (click)="navigateToGenre(genre.id, genre.name)" >{{ genre.name }}</a>
+              </li>}
           </ul>
         </li>
       </ul>

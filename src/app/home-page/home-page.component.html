@@ -7,11 +7,11 @@
       <button class="arrow left" (click)="scrollLeft(category.name)">❮</button>
 
       <!-- Contenitore delle card -->
-      <div class="movie-list" id="{{ category.name }}">
+      <div class="movie-list " id="{{ category.name }}">
         <!-- Usa direttamente le card generate da app-card-component -->
-         @for(movie of category.movies;track $index){
+        @for(movie of category.movies;track $index){
           <app-card-component [movie]="movie" layout="horizontal"></app-card-component>
-         }
+        }
       </div>
 
 
